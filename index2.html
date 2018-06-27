@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html>
+<title>VisualT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="wordcloud2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    
+    <style>
+    html{
+        height: 100%;
+        width: 100%;
+    }
+    body {
+        font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+        height: 100%;
+        width: 100%;
+    }
+    .legend {
+        border: 1px solid #555555;
+        border-radius: 5px 5px 5px 5px;
+        font-size: 0.8em;
+        margin: 10px;
+        padding: 8px;
+    }
+    .bld {
+        font-weight: bold;
+    }
+	
+	div.tab {
+    overflow: hidden;
+    position: relative;
+    min-height: 1%;   
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+div.tab button:hover {
+    background-color: #ddd;
+}
+ 
+
+div.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+.link {
+    stroke: #999;
+    stroke-opacity: .6;
+}
+
+h3 {
+    color: #1ABC9C;
+    text-align:center;  
+    font-style: italic;
+    font-size: 14px;
+    font-family: "Helvetica";
+}
+
+    .elements{
+        border: 2px solid;
+        padding: 20px; 
+        resize: both;
+        overflow: auto;
+        height: 50%;
+        
+    }
+
+.flex-item {
+	text-align: center;
+	font:Calibri;
+    background-color: cornflowerblue;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius:1em;
+}
+
+#chartArea {
+	background-color: #FFF;
+	border: 1px solid #AAA;
+	width: 100%;
+}
+    
+    textarea {
+    resize: auto;
+    overflow: auto;
+}
+    
+    .ui-widget-content {
+            background: #e6ffff;
+            border: 1px solid #DDDDDD;
+            color: #333333;
+         }
+    
+    .svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+    .resizable { width: 25%; height: 100%; padding: 0.5em;
+             float:left;}
+</style>
+    
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:130px">
+  <h5 class="w3-bar-item">Menu</h5>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Graph')">Graph</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'WordCloud')">WordCloud</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Help')">Help</button>
+</div>
+
+<div style="margin-left:130px;">
+    <div class="w3-padding" style="border: 1px solid #AAA">Visual T</div>
+
+      <div id="Graph" class="w3-container city" style="display:none; height: 100%; position: absolute; width:100%; padding:0px">
+        <div class="ui-widget-content resizable" style="float:left;max-width:25%;width:25%">
+            
+            <br/>
+            Put the JSON here
+            <br/>
+            <textarea id = "jsonGraph" rows="31" cols="40">
+
+        </textarea><br>
+            <button onclick="createGraph();">Make Graph</button>
+            
+           
+
+        </div>
+    <div id="graphElement" class="ui-widget-content resizable"  style="float: left; max-width:50%;width:50%;">
+        <div id="SVGGraph"></div>
+        <div id="graphData" style="margin: 0px auto; width: inherit">
+        
+        </div>
+        
+                
+                
+            
+    </div>
+        <div class="ui-widget-content resizable" style="float:left;max-width:22%;width:22%;">
+        
+            <input id="search">
+            <button id="buttonSearch" type="button" >Search</button>
+            <br/>
+            <input type="radio" name="campo" value="id"> Name </input>
+            <input type="radio" name="campo" value="group"> Group </input>
+            <br/>
+            <a id="downloadAnchorElem" style="display:none"></a>
+            <button id="buttonDownload">Create file</button>
+        
+        <div id="filter">
+
+        </div>
+        </div>
+  </div>
+
+  <div id="WordCloud" class="w3-container city" style="display:none">
+    <div style="float:left;padding:10px">
+	<textarea id="jsonWordCloud" rows="31" cols="70">
+
+	</textarea>
+	</br>
+	<button onclick="tests();">Fazer nuvem de Palavras</button>
+	</div>
+	<div>
+	<canvas id="word_cloud" class="word_cloud" width="1000" height="400"></canvas>
+	</div>
+  </div>
+
+  <div id="Help" class="w3-container city" style="display:none">
+    <h1>Como colocar os valores para o Grafo</h1>
+	Esqueleto:
+	</br>
+	</br>
+	{"nodes": [{"name": "(nome do nó)", "group": "(nome do nó)"}, {...}, ... {...}], "links": [{"source": (nó de origem), "target": (nó alvo), "value":(peso da ligação)}, {...}, ..., {...}] }
+	</br>
+	</br>
+	<h1>Como colocar os valores para o WorldCloud</h1>
+	Esqueleto:
+	</br>
+	</br>
+	[{"text":"(palavra desejada)", "size":(valor da palavra)}, ..., {...}]
+  </div>
+
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", ""); 
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+<script>
+
+	function apagar(){
+	d3.select("svg").remove();
+	}
+
+	function tests(){
+	var teste = 	document.getElementById('jsonWordCloud').value;
+	teste1 = JSON.stringify(eval('('+teste+')'));
+	teste2 = JSON.parse(teste1);
+	var frequency_list = [{"text":"study","size":40},{"text":"motion","size":15},{"text":"forces","size":10},{"text":"electricity","size":15},{"text":"movement","size":10},{"text":"relation","size":5},{"text":"things","size":10},{"text":"force","size":5},{"text":"ad","size":5},{"text":"energy","size":85},{"text":"living","size":5},{"text":"nonliving","size":5},{"text":"laws","size":15},{"text":"speed","size":45},{"text":"velocity","size":30},{"text":"define","size":5},{"text":"constraints","size":5},{"text":"universe","size":10},{"text":"physics","size":120},{"text":"describing","size":5},{"text":"matter","size":90},{"text":"physics-the","size":5},{"text":"world","size":10},{"text":"works","size":10},{"text":"science","size":70},{"text":"interactions","size":30},{"text":"studies","size":5},{"text":"properties","size":45},{"text":"nature","size":40},{"text":"branch","size":30},{"text":"concerned","size":25},{"text":"source","size":40},{"text":"google","size":10},{"text":"defintions","size":5},{"text":"two","size":15},{"text":"grouped","size":15},{"text":"traditional","size":15},{"text":"fields","size":15},{"text":"acoustics","size":15},{"text":"optics","size":15},{"text":"mechanics","size":20},{"text":"thermodynamics","size":15},{"text":"electromagnetism","size":15},{"text":"modern","size":15},{"text":"extensions","size":15},{"text":"thefreedictionary","size":15},{"text":"interaction","size":15},{"text":"org","size":25},{"text":"answers","size":5},{"text":"natural","size":15},{"text":"objects","size":5},{"text":"treats","size":10},{"text":"acting","size":5},{"text":"department","size":5},{"text":"gravitation","size":5},{"text":"heat","size":10},{"text":"light","size":10},{"text":"magnetism","size":10},{"text":"modify","size":5},{"text":"general","size":10},{"text":"bodies","size":5},{"text":"philosophy","size":5},{"text":"brainyquote","size":5},{"text":"words","size":5},{"text":"ph","size":5},{"text":"html","size":5},{"text":"lrl","size":5},{"text":"zgzmeylfwuy","size":5},{"text":"subject","size":5},{"text":"distinguished","size":5},{"text":"chemistry","size":5},{"text":"biology","size":5},{"text":"includes","size":5},{"text":"radiation","size":5},{"text":"sound","size":5},{"text":"structure","size":5},{"text":"atoms","size":5},{"text":"including","size":10},{"text":"atomic","size":10},{"text":"nuclear","size":10},{"text":"cryogenics","size":10},{"text":"solid-state","size":10},{"text":"particle","size":10},{"text":"plasma","size":10},{"text":"deals","size":5},{"text":"merriam-webster","size":5},{"text":"dictionary","size":10},{"text":"analysis","size":5},{"text":"conducted","size":5},{"text":"order","size":5},{"text":"understand","size":5},{"text":"behaves","size":5},{"text":"en","size":5},{"text":"wikipedia","size":5},{"text":"wiki","size":5},{"text":"physics-","size":5},{"text":"physical","size":5},{"text":"behaviour","size":5},{"text":"collinsdictionary","size":5},{"text":"english","size":5},{"text":"time","size":35},{"text":"distance","size":35},{"text":"wheels","size":5},{"text":"revelations","size":5},{"text":"minute","size":5},{"text":"acceleration","size":20},{"text":"torque","size":5},{"text":"wheel","size":5},{"text":"rotations","size":5},{"text":"resistance","size":5},{"text":"momentum","size":5},{"text":"measure","size":10},{"text":"direction","size":10},{"text":"car","size":5},{"text":"add","size":5},{"text":"traveled","size":5},{"text":"weight","size":5},{"text":"electrical","size":5},{"text":"power","size":5}];
+
+	list = [];
+	for (var i in teste2) {
+		list.push([teste2[i]["text"], teste2[i]["size"]])
+	}
+	
+	
+	WordCloud.minFontSize = "15px"
+	WordCloud(document.getElementById('word_cloud'), {
+		list: list,
+		gridsize: 21,
+		weightFactor: 2,
+		shuffle: true,
+		ellipticity: 1,
+		click: function(item){
+			window.open("http://lmgtfy.com/?q=" + item[0], "_blank") ;
+		}
+	});
+}
+
+</script>
+</html>
+</body>
+
+<script>
+$(function() {
+            $( ".resizable" ).resizable();
+         });
+</script>
+
+<script>
+ 
+//Criar os grupos dinamicamente
+function createHtml(){
+    
+    var allGroupsNodes = new Set();
+    var allGroupsLinks = new Set();
+    var myArrNodes, myArrLinks;
+    var htmlCheckNode, newHtmlCheckNode, htmlCheckLink, newHtmlCheckLink, htmlSelectLink, newHtmlSelectLink, htmlOptionLink, newHtmlOptionLink, htmlSelectColor, newHtmlSelectColor, element;
+    var dados;
+    var htmlFinal;
+    var tableOfAssociation;
+    
+    element = "filter";
+    
+    htmlFinal = "<br> <button id='buttonNodeMostrar'>Show</button>  <button id='buttonNodeLimpar'>Clean</button> </br>";
+    htmlCheckNode = "<input type='checkbox' name='my_checkbox' id='checkNode%groupId%'>%group% <input type='checkbox' name='my_checkbox' id='checkNode%groupId%Neigh'>Neighbor ";
+    htmlCheckLink = "<input type='checkbox' name='my_checkbox' id='checkLink%group%'>%group%"
+    htmlSelectLink = "<select id='Links%group%'>      ";
+    htmlOptionLink = "<option value='%group%'>Link %group%</option>";
+    htmlSelectColor = "<input type='color' id='nodeColor%group%'>";
+    
+    dados = data();
+        
+    tableOfAssociationNode = createMap(data(), "node");
+    tableOfAssociationLink = createMap(data(), "link");
+    
+    dados.nodes.forEach(function(d,i){
+        allGroupsNodes.add(d.group);
+    });
+        
+    dados.links.forEach(function(d,i){
+        allGroupsLinks.add(d.value);
+    });
+      
+    myArrNodes = Array.from(allGroupsNodes).sort();
+    myArrLinks = Array.from(allGroupsLinks).sort();
+    
+    for(var i = 0; i < myArrNodes.length ; i++){
+        
+        newHtmlCheckNode = htmlCheckNode.replace('%groupId%', tableOfAssociationNode.get(myArrNodes[i]));
+        newHtmlCheckNode = newHtmlCheckNode.replace('%group%', myArrNodes[i]);
+        newHtmlCheckNode = newHtmlCheckNode.replace('%groupId%', tableOfAssociationNode.get(myArrNodes[i]));
+        
+        htmlFinal += newHtmlCheckNode;
+            
+            
+        newHtmlSelectLink = htmlSelectLink.replace('%group%', tableOfAssociationNode.get(myArrNodes[i]));
+        //newHtmlSelectLink = newHtmlSelectLink.replace('%group%', myArrNodes[i]);
+        
+        
+        htmlFinal += newHtmlSelectLink;
+        
+        
+        for(var j = 0; j < myArrLinks.length; j++){
+            newHtmlOptionLink = htmlOptionLink.replace('%group%', tableOfAssociationLink.get(myArrLinks[j]));
+            newHtmlOptionLink = newHtmlOptionLink.replace('%group%', myArrLinks[j]);
+            htmlFinal += newHtmlOptionLink;
+            
+        }
+        
+        htmlFinal += newHtmlSelectLink + '</select>'
+        
+        newHtmlSelectColor = htmlSelectColor.replace('%group%', tableOfAssociationNode.get(myArrNodes[i]));
+        //newHtmalSelectColor = newHtmlSelectColor.replace('%color%', tableOfAssociationNode.get(myArrNodes[i]));
+        htmlFinal += newHtmlSelectColor + '</br>';
+        
+    }
+    
+    for(var j = 0; j < myArrLinks.length; j++){
+        newHtmlCheckLink = htmlCheckLink.replace('%group%', tableOfAssociationLink.get(myArrLinks[j]));
+        newHtmlCheckLink = newHtmlCheckLink.replace('%group%', myArrLinks[j]);
+        
+        htmlFinal += newHtmlCheckLink + '</br>';
+        
+        }
+    
+    
+    document.getElementById(element).innerHTML = htmlFinal;
+    
+}
+    
+
+    
+    function createHtmlInformation(){
+        html = '<div id="informaçãoGraph" class="flex-item" style="float: left;"> Info Graph </div>                                                                      <div id="informação" class="flex-item" style="float: left;"> Info Nodes </div>';
+        
+        document.getElementById("graphData").innerHTML = html;
+    }
+    
+function createGraph(){
+    
+    createHtml();
+    
+	apagar();
+    
+    var setNode = new Set();
+    var setLink = new Set();
+    var arrNode, arrLink;
+    var tableOfAssociationNode;
+    var tableOfAssociationLink;
+
+    var graph;
+    
+	var width = 800 , height = 600
+
+	var margin = {top: 0, right: 0, bottom: 0, left: 0};
+    
+    
+    
+
+	var svg = d3.select('#SVGGraph').append("svg")
+		.attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 800 600")
+        .classed("svg-content", true)
+		.attr("id", "chart");
+	
+    
+		svg.append("rect")
+		.attr("width", "100%")
+		.attr("height", "100%")
+		.attr("fill", "azure");
+    
+    //var jsonGraph = document.getElementById('jsonGraph').value;
+	graph = data();
+	//graphRec = JSON.parse(JSON.stringify(graph));
+
+    
+    graph.nodes.forEach(function(d,i){
+        setNode.add(d.group);
+    });
+        
+    graph.links.forEach(function(d,i){
+        setLink.add(d.value);
+    }); 
+    
+    arrNode = Array.from(setNode).sort();
+    arrLink = Array.from(setLink).sort();
+       
+    
+	var color = d3.scaleOrdinal(d3.schemeCategory20);
+    
+    
+
+	svg = svg = svg.call(d3.zoom().on("zoom", zoomed)).append("g");
+
+	var simulation = d3.forceSimulation(graph.nodes);
+    
+        simulation
+		.force("link", d3.forceLink().id(function(d) { return d.id; }))
+		.force("charge", d3.forceManyBody().strength(-200))
+		.force("center", d3.forceCenter(width / 2, height / 2));
+	
+    var link = svg.selectAll(".link")
+		.data(graph.links)
+		.enter().append("line")
+		.attr("class", "link");
+    
+        link.filter(function (d) {return d.value == 1})	
+			.attr(('marker-end'), ("url(#arrowWhite)"));
+
+        link.filter(function (d) {return d.value == 2})	
+			.attr(('marker-end'), ("url(#arrow)"));
+        
+        link.filter(function(d) {return d.value == 3})
+            .style("marker-end", "url(#line)");
+
+        link.filter(function (d) {return d.value == 4})
+			.style("marker-end",  "url(#suit)");
+	
+	
+	
+	simulation
+		.nodes(graph.nodes)
+		.on("tick", ticked);
+	  
+	simulation.force("link")
+		.links(graph.links);
+
+
+	
+    
+		
+			
+	var node = svg.selectAll(".node")
+		.data(graph.nodes)
+		.enter().append("circle")
+		.attr("class", "node")
+		.attr("r", function(e) {
+            var contador = 0;
+            graph.links.forEach(function(d,i){
+            if(d.target.id == e.id){
+                contador++;
+            }
+            else if(d.source.id == e.id){
+                contador++; 
+            }
+        })
+            console.log("Nome do nó: " + e.id + " com grau: " + contador);
+            return contador * 2;
+        })
+		.style("fill", function (d) {return color(d.group);})
+		.on('click', function(d) {document.getElementById("informação").innerHTML = ''; document.getElementById("informação").innerHTML += "Info Nodes <br>" + "Name: " + d.id + "<br>" + "Group: " + d.group;})
+		.on('dblclick', highlight)
+		.call(d3.drag()
+			.on("start", dragstarted)
+			.on("drag", dragged)
+			.on("end", dragended));
+    
+    simulation.force("collide", d3.forceCollide().radius(function(e) { 
+            var contador = 0;
+            graph.links.forEach(function(d,i){
+            if(d.target.id == e.id){
+                contador++;
+            }
+            else if(d.source.id == e.id){
+                contador++; 
+            }
+        })
+            return contador * 2; }).iterations(2));
+    
+    
+    
+    function estatiscas(graph){
+   
+        tableOfAssociationNode = createMap(data(), "node");
+        tableOfAssociationLink = createMap(data(), "link");
+        
+        var estatiscas = "Info Graph <br>";
+        estatiscas += "Number of Nodes: " + graph.nodes.length + "<br>" ;
+        estatiscas += "Number of differents groups of nodes: " + tableOfAssociationNode.size + "<br>";
+        
+        var todosNos = new Array(tableOfAssociationNode.size);
+        todosNos.fill(0);
+        
+        todosNos.forEach(function(element, index){
+                
+                element = 0; 
+            console.log(element);
+            });
+        
+        
+       graph.nodes.forEach(function(d,i){
+            todosNos[tableOfAssociationNode.get(d.group) - 1] += 1;
+            
+        });
+    
+            todosNos.forEach(function(element, index){
+                estatiscas += "Teste: " + element + "<br>"; 
+            });
+           
+        
+        
+        var links0 = 0;
+        var links1 = 0;
+        var links2 = 0;
+        var links3 = 0;
+        var links4 = 0;
+        graph.links.forEach(function(d,i){
+            if(d.value == 0)
+                links0++;
+            else if(d.value == 1)
+                links1++;
+            else if(d.value == 2)
+                links2++;
+            else if(d.value == 3)
+                links3++;
+            else if(d.value == 4)
+                links4++;
+        }
+    );
+    
+        estatiscas += "Number of Links: " + graph.links.length + "<br>";
+        
+        document.getElementById("informaçãoGraph").innerHTML = estatiscas;
+    }
+    
+
+    
+    
+        
+	node.append("title")
+		.text(function(d) { return d.name; });
+
+
+	function ticked() {
+		link
+			.attr("x1", function(d) { return d.source.x; })
+			.attr("y1", function(d) { return d.source.y; })
+			.attr("x2", function(d) { return d.target.x; })
+			.attr("y2", function(d) { return d.target.y; });
+		node
+			.attr("cx", function(d) { return d.x; })
+			.attr("cy", function(d) { return d.y; });
+	}
+	
+	function dragstarted(d) {
+		if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+		d.fx = d.x;
+		d.fy = d.y;
+	}
+	function dragged(d) {
+		d.fx = d3.event.x;
+		d.fy = d3.event.y;
+	}
+	function dragended(d) {
+		if (!d3.event.active) simulation.alphaTarget(0);
+		d.fx = null;
+		d.fy = null;
+	}
+
+$("#buttonSearch").click(function() {
+    searchNode(); 
+});
+
+$("#buttonDownload").click(function() {
+    download(); 
+});
+
+    
+$( "#buttonNodeMostrar" ).click(function(){
+             d3.selectAll("circle, .link").transition()
+                .style("opacity", 1);
+    });
+    
+$( "#buttonNodeEstatiscas" ).click(function(){
+             alert(estatiscas(graph));
+    });
+    
+$( "#buttonNodeLimpar" ).click(function(){
+             d3.selectAll("circle, .link").transition()
+                .style("opacity", 0);
+    
+            $("input:checkbox").prop('checked', false);
+    });
+
+    tableOfAssociationNode = createMap(data(), "node");
+    tableOfAssociationLink = createMap(data(), "link");
+    
+    for(var i = 0; i < arrNode.length ; i++){
+        var textNode = '#checkNode' + tableOfAssociationNode.get(arrNode[i]);
+        var textNodeNeigh = '#checkNode' + tableOfAssociationNode.get(arrNode[i]) + 'Neigh';
+        var textNodeLink = '#Links' + tableOfAssociationNode.get(arrNode[i]);
+        var textNodeColor = '#nodeColor' + tableOfAssociationNode.get(arrNode[i]);
+
+        
+        var code = '$(\'' +  textNode + '\' ).change(function(){                changeNode(' + tableOfAssociationNode.get(arrNode[i]) + ', this.checked);                 if(this.checked){                     $(\'' + textNodeLink + '\').change(function (){                        if($(this).val() != "Nada")                            changeNodeLinkedByType(' + tableOfAssociationNode.get(arrNode[i]) + ', true, $(this).val());                    });                 }            });';
+        
+        var code2 = '$(\'' + textNodeNeigh + '\').change(function(){                changeNodeLinked(' + tableOfAssociationNode.get(arrNode[i]) + ', this.checked); });';
+        
+        var code3 = '$(\'' + textNodeColor + '\').on("change", function(){                changeNodeColor(' + tableOfAssociationNode.get(arrNode[i]) + ', $(this).val());}); ';
+        
+        
+        eval(code);
+        eval(code2);
+        eval(code3);
+         
+        
+        
+    }
+    
+    /*
+        $(' #checkNodeColor"group"').change(function()){
+            changeNodeColor("groupId", $(this).val());
+        }
+    */
+    
+    
+    
+    
+    /*
+$( "#checkNodeActor" ).change(function(){
+                changeNode(4, this.checked);
+                 if(this.checked){
+                     $("#LinksActor").change(function (){
+                        if($(this).val() != "Nada")
+                            changeNodeLinkedByType(4, true, $(this).val());
+                    });
+                 }
+            });
+         
+$( "#checkNodeActorNeigh" ).change(function(){
+                changeNodeLinked(4, this.checked);    
+            });
+         
+$( "#checkNodeGoal" ).change(function(){
+                    changeNode(1, this.checked); 
+                 if(this.checked){
+                     $("#LinksGoal").change(function (){
+                        if($(this).val() != "Nada")
+                            changeNodeLinkedByType(1, true, $(this).val());
+                    });
+                 }
+            });
+             
+$( "#checkNodeGoalNeigh" ).change(function(){
+                    changeNodeLinked(1, this.checked);
+                 
+            });
+             
+$( "#checkNodeTask" ).change(function(){
+                changeNode(3, this.checked);
+                 if(this.checked){
+                     $("#LinksTask").change(function (){
+                        if($(this).val() != "Nada")
+                            changeNodeLinkedByType(3, true, $(this).val());
+                    });
+                 }
+            });
+     
+$( "#checkNodeTaskNeigh" ).change(function(){
+                changeNodeLinked(3, this.checked);    
+            });
+         
+$( "#checkNodeSoftGoal" ).change(function(){
+                changeNode(2, this.checked);
+                 if(this.checked){
+                     $("#LinksSoftGoal").change(function (){
+                        if($(this).val() != "Nada")
+                            changeNodeLinkedByType(2, true, $(this).val());
+                    });
+                 }
+            });
+             
+$( "#checkNodeSoftGoalNeigh" ).change(function(){
+                changeNodeLinked(2, this.checked);    
+            });
+             
+$( "#checkNodeResource" ).change(function(){
+                changeNode(5, this.checked);  
+                 if(this.checked){
+                     $("#LinksResource").change(function (){
+                        if($(this).val() != "Nada")
+                            changeNodeLinkedByType(5, true, $(this).val());
+                    });
+                 }
+            });
+             
+$( "#checkNodeResourceNeigh" ).change(function(){
+                changeNodeLinked(5, this.checked);    
+            });
+            
+      */     
+    
+    for(var i = 0 ;i < arrLink.length ; i++){
+        var textLink = '#checkLink' + tableOfAssociationLink.get(arrLink[i]);
+
+        var code = '$(\'' + textLink +'\').change(function(){                changeLink('+ tableOfAssociationLink.get(arrLink[i]) + ', this.checked);});';
+         eval(code);
+        
+        
+    }
+  /*       
+$( "#checkLinkActor0" ).change(function(){
+                changeLink(0, this.checked);    
+            });
+             
+$( "#checkLink1" ).change(function(){
+                changeLink(1, this.checked);    
+            });
+             
+$( "#checkLink2" ).change(function(){
+                changeLink(2, this.checked);    
+            });
+             
+$( "#checkLink3" ).change(function(){
+                changeLink(3, this.checked);  
+            });
+             
+$( "#checkLink4" ).change(function(){
+                changeLink(4, this.checked);    
+            });
+        
+       */  
+          
+    
+    
+         
+     
+/*    
+$("#buttonThreshold").click(function() {
+	alert(document.getElementById('quebraLinks').value);
+    threshold(document.getElementById('quebraLinks').value);
+});
+*/
+	function searchNode() {
+
+    var selectedVal = document.getElementById('search').value;
+    var node = svg.selectAll("circle");
+	
+	var rates = document.getElementsByName('campo');
+	var rate_value;
+	for(var i = 0; i < rates.length; i++){
+		if(rates[i].checked){
+			rate_value = rates[i].value;
+		}
+	}
+	
+	
+	
+    if (selectedVal == "none") {
+        node.style("stroke", "white").style("stroke-width", "1");
+    } else {
+        var selected = node.filter(function (d, i) {
+            return eval("d." + rate_value) != selectedVal;
+        });
+        selected.style("opacity", "0");
+        var link = svg.selectAll(".link")
+        link.style("opacity", "0");
+        d3.selectAll("circle, .link").transition()
+            .duration(5000)
+            .style("opacity", 1);
+
+
+    }
+	selectedVal = "";				
+}
+
+
+	function download(){
+		var a = document.getElementById("a");
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(graph.links, ['name', 'group', 'source', 'target', 'value'], 4));
+		var dlAnchorElem = document.getElementById('downloadAnchorElem');
+		dlAnchorElem.setAttribute("href",     dataStr     );
+		dlAnchorElem.setAttribute("download", "scene.json");
+		dlAnchorElem.click();
+	}
+
+
+//---Highlight---
+
+	
+	var toggle = 0;
+
+	var neighbors_list = [];
+
+	var linkedByIndex = {};
+	for (i = 0; i < graph.nodes.length; i++) {
+    linkedByIndex[i + "," + i] = 1;
+};
+	graph.links.forEach(function (d) {
+    linkedByIndex[d.source.index + "," + d.target.index] = 1;
+});
+	
+	//This function looks up whether a pair are neighbours
+	function neighboring(a, b) {
+        return linkedByIndex[a.index + "," + b.index];
+}
+
+	function highlight() {
+
+		if (toggle == 0) {
+        d = d3.select(this).node().__data__;
+        node.style("opacity", function (o) {
+            return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
+        });
+        
+        link.style("opacity", function (o) {
+            return d.index==o.source.index | d.index==o.target.index ? 1 : 0.1;
+        });
+        
+        
+        toggle = 1;
+    } else {
+        //Put them back to opacity=1
+        node.style("opacity", 1);
+        link.style("opacity", 1);
+        toggle = 0;
+    }
+
+}
+    
+    
+  
+
+    
+    function connectedNodesLinkedNormal(nome) {
+        var nodesTarget = [];
+        for(var i = 0; i < nome.length; i++){
+            
+            node.filter(function (a) { return a.id == nome[i]}).transition().style("opacity", 0);
+            link.filter(function (a) { 
+                if(a.source.id == nome[i])
+                    node.filter(function (b) { return b.id == a.target.id}).transition().style("opacity", 0);
+                    return a.source.id == nome[i]}).transition().style("opacity", 0);
+
+        }
+    }
+    
+    function changeNode(type, checked){
+        if(checked){
+                    node.filter(function (d){;return d.groupId == type;}).transition()
+                        .style("opacity", 1);
+                } else{
+                    node.filter(function (d){;return d.groupId == type;}).transition()
+                        .style("opacity", 0);
+                }
+        
+    }
+    
+    function changeNodeColor(type, color){
+                    node.filter(function (d){;return d.groupId == type;}).transition()
+                        .style("fill", color);
+        
+    }
+    
+    function changeLink(type, checked){
+        if(checked){
+                    link.filter(function (d){if( d.groupId == type){
+                        node.filter(function(b){return d.source.id == b.id}).transition().style("opacity", 0.8);
+                        node.filter(function(b){return d.target.id == b.id}).transition().style("opacity", 0.8);
+                            return d.groupId == type;
+                    }}).transition().style("opacity", 1);
+                } else{
+                    link.filter(function (d){;return d.groupId == type;}).transition()
+                        .style("opacity", 0);
+                }
+        
+    }
+    
+    function changeNodeLinked(type, checked){
+        if(checked){
+                    node.filter(function (d){if(d.groupId == type){
+                        var listNodes = [];
+                        listNodes.push(d.id);
+                                connectedNodesLinkedHighlight(listNodes);
+                    }
+                    });
+                } else{
+                    node.filter(function (d){if(d.groupId == type){
+                        var listNodes = [];
+                        listNodes.push(d.id);
+                                connectedNodesLinkedNormal(listNodes);
+                    }
+                    });
+                }
+        function connectedNodesLinkedHighlight(nome) {
+            var nodesTarget = [];
+            for(var i = 0; i < nome.length; i++){
+            
+                node.filter(function (a) { return a.id == nome[i]}).transition().style("opacity", 1);
+                link.filter(function (a) { 
+                    if(a.source.id == nome[i])
+                        node.filter(function (b) { return b.id == a.target.id}).transition().style("opacity", 0.5);
+                        return a.source.id == nome[i]}).transition().style("opacity", 0.5);
+
+            }
+        }
+    
+    }
+    
+    function changeNodeLinkedByType(type, checked, valueLink){
+        if(true){
+                    node.filter(function (d){if(d.groupId == type){
+                        var listNodes = [];
+                        listNodes.push(d.id);
+                                connectedNodesLinkedHighlightByType(listNodes, valueLink);
+                    }
+                    });
+                } else{
+                    node.filter(function (d){if(d.groupId == type){
+                        var listNodes = [];
+                        listNodes.push(d.id);
+                                connectedNodesLinkedNormal(listNodes);
+                    }
+                    });
+                }
+        function connectedNodesLinkedHighlightByType(nome, type) {
+            var nodesTarget = [];
+            for(var i = 0; i < nome.length; i++){
+            
+                node.filter(function (a) { return a.id == nome[i]}).transition().style("opacity", 1);
+                link.filter(function (a) { 
+                    if(a.groupId == type){
+                        if(a.source.id == nome[i])
+                            node.filter(function (b) { return b.id == a.target.id}).transition().style("opacity", 0.5);
+                    }return (a.groupId == type && a.source.id == nome[i])}).transition().style("opacity", 0.5);
+                
+            }
+        }
+    }
+    
+
+//--Pinning Down Nodes------
+
+//--Arrows--
+
+    function arrows(svg){
+    
+        svg.append("defs").append("marker")
+            .attr("id", "arrow")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 35)
+            .attr("refY", 0)
+            .attr("markerWidth", 6)
+            .attr("markerHeight", 6)
+            .attr("orient", "auto")
+            .append("svg:path")
+            .attr("d", "M0,-5L10,0L0,5");
+    
+        svg.append("defs").append("marker")
+            .attr("id", "arrowWhite")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 35)
+            .attr("refY", 0)
+            .attr("markerWidth", 6)
+            .attr("markerHeight", 6)
+            .attr("orient", "auto")
+            .attr("fill", "red")
+            .append("svg:path")
+            .attr("d", "M0,-5L10,0L0,5");
+    
+        svg.append("defs").append("marker")
+            .attr("id", "line")
+            .attr("viewBox", "-1 -5 2 10")
+            .attr("refX", 35)
+            .attr("refY", 0)
+            .attr("markerWidth", 6)
+            .attr("markerHeight", 6)
+            .attr("orient", "auto")
+            .append("svg:path")
+            .attr("d", "M 0,0 m -1,-5 L 1,-5 L 1,5 L -1,5 Z");
+	
+	
+	
+	   svg.append("defs").selectAll("marker")
+            .data(["suit", "licensing", "resolved"])
+           .enter().append("marker")
+           .attr("id", function(d) { return d; })
+           .attr("viewBox", "0 -5 10 10")
+           .attr("refX", 35)
+           .attr("refY", 0)
+           .attr("markerWidth", 6)
+           .attr("markerHeight", 6)
+           .attr("orient", "auto")
+           .append("path")
+           .attr("d", "M0,-5L10,0L0,5 L10,0 L0, -5")
+        .style("stroke", "#4679BD");
+    }
+    
+    arrows(svg);
+	createHtmlInformation();
+    estatiscas(graph);
+/*
+	function threshold(thresh) {
+    graph.links.splice(0, graph.links.length);
+
+        for (var i = 0; i < graphRec.links.length; i++) {
+            if (graphRec.links[i].value > thresh) {graph.links.push(graphRec.links[i]);}
+        }
+    
+    linkedByIndex = {};
+    for (i = 0; i < graph.nodes.length; i++) {
+        linkedByIndex[i + "," + i] = 1;
+    };
+    // for each link
+    for (var i = 0; i < graphRec.links.length; i++) {
+            if (graphRec.links[i].value > thresh) {
+                //  add this link
+                linkedByIndex[graphRec.links[i].source.index + "," + graphRec.links[i].target.index] = 1;
+                
+            }
+        }
+        
+    restart(); 
+}
+
+
+
+	function restart() {
+	
+	
+    link = link.data(graph.links);
+    link.exit().remove();
+    link.enter().insert("line", ".node").attr("class", "link");
+    node = node.data(graph.nodes);
+    node.enter().insert("circle", ".cursor").attr("class", "node");
+	
+	
+	simulation.nodes(node);
+	simulation.force("link").links(link);
+	simulation.alpha(1).restart();
+}
+*/
+
+function zoomed() {
+  svg.attr("transform", "translate(" + d3.event.transform.x + "," + d3.event.transform.y + ")" + " scale(" + d3.event.transform.k + ")");
+}
+
+    
+    function defineGroup(e){
+        var matriz = ["", "Goal", "Softgoal", "Task", "Actor", "Amarelo"];
+        for(var i = 0; i< matriz.length; i ++){
+            if(e == i){
+                return matriz[i];
+            }
+        }
+    }
+    
+
+}
+
+    function data (){
+        var jsonGraph = document.getElementById('jsonGraph').value;
+        var dados = JSON.parse(jsonGraph);
+        
+        return dados = createMap(dados, "dados");
+        
+        
+        
+    }
+    
+    function createMap(dados, typeOfDataReturned){
+        var valueNode = new Map();
+        var i = 1;
+        var valueLink = new Map();
+        var j = 1;
+        
+        if(typeOfDataReturned === "dados"){
+ 
+            dados.nodes.forEach(function(cur, it){
+                if(!(valueNode.has(cur.group))){
+                    valueNode.set(cur.group, i);
+                    cur.groupId = i;
+                    i++;
+                }
+                else{
+                    cur.groupId = valueNode.get(cur.group);
+                }
+            });
+            
+            dados.links.forEach(function(cur, it){
+                if(!(valueLink.has(cur.value))){
+                    valueLink.set(cur.value, j);
+                    cur.groupId = j;
+                    j++;
+                }
+                else{
+                    cur.groupId = valueLink.get(cur.value);
+                }
+            });
+            
+            return dados;
+        }
+        else if(typeOfDataReturned == "node"){
+            dados.nodes.forEach(function(cur, it){
+                if(!(valueNode.has(cur.group))){
+                    valueNode.set(cur.group, i);
+                    cur.groupId = i;
+                    i++;
+                }
+                else{
+                    cur.groupId = valueNode.get(cur.group);
+                }
+            });
+            
+            return valueNode;
+        }
+        else if(typeOfDataReturned == "link"){
+            dados.links.forEach(function(cur, it){
+                if(!(valueLink.has(cur.value))){
+                    valueLink.set(cur.value, j);
+                    cur.groupId = j;
+                    j++;
+                }
+                else{
+                    cur.groupId = valueLink.get(cur.value);
+                }
+            });
+            
+            return valueLink;
+        }
+        
+    }
+
+
+</script>
+
+

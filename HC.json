@@ -1,0 +1,1058 @@
+{
+        "nodes": [{
+            "id": "Covered [Sickness]",
+                "group": 1
+        }, {
+            "id": "Treated [Sickness]",
+                "group": 1
+        }, {
+            "id": "Assessed [Treatment Plan]",
+                "group": 1
+        }, {
+            "id": "Med Assessed [Claim]",
+                "group": 1
+        }, {
+            "id": "Fast [Processing (Claim)]",
+                "group": 2
+        }, {
+            "id": "Quickly [Treated (Sickness)]",
+                "group": 2
+        }, {
+            "id": "Continuing Business [Patient]",
+                "group": 2
+        }, {
+            "id": "Affordable [Premium]",
+                "group": 2
+        }, {
+            "id": "Continued Employment",
+                "group": 2
+        }, {
+            "id": "Cost Effective [Treatment]",
+                "group": 2
+        }, {
+            "id": "Fast [Claims Approval]",
+                "group": 2
+        }, {
+            "id": "Profitable",
+                "group": 2
+        }, {
+            "id": "Continuing Approval",
+                "group": 2
+        }, {
+            "id": "Take Medicine [Med]",
+                "group": 3
+        }, {
+            "id": "Process Claim [Claim]",
+                "group": 3
+        }, {
+            "id": "Test [Sample]",
+                "group": 3
+        }, {
+            "id": "Follow Prescribed Health Program [Program]",
+                "group": 3
+        }, {
+            "id": "Assess Treatment",
+                "group": 3
+        }, {
+            "id": "Take Medication",
+                "group": 3
+        }, {
+            "id": "Patient",
+                "group": 4
+        }, {
+            "id": "Be Well",
+                "group": 1
+        }, {
+            "id": "Peace of Mind",
+                "group": 2
+        }, {
+            "id": "Quickly Treated",
+                "group": 2
+        }, {
+            "id": "Affordable",
+                "group": 2
+        }, {
+            "id": "Be Well By Joining HMO Plan",
+                "group": 3
+        }, {
+            "id": "Get Well By Having Mgd Indemnity Insurance",
+                "group": 3
+        }, {
+            "id": "Get Treated",
+                "group": 3
+        }, {
+            "id": "Join HMO Plan",
+                "group": 3
+        }, {
+            "id": "Buy Insurance",
+                "group": 3
+        }, {
+            "id": "Get Well By Having Full Indemnity Insurance",
+                "group": 3
+        }, {
+            "id": "Physician",
+                "group": 4
+        }, {
+            "id": "Patient Be Cured",
+                "group": 1
+        }, {
+            "id": "Viable Practice",
+                "group": 2
+        }, {
+            "id": "Adequate Clientele",
+                "group": 2
+        }, {
+            "id": "Economically Viable Practice",
+                "group": 2
+        }, {
+            "id": "Low Cost Medical Treatments",
+                "group": 2
+        }, {
+            "id": "Effective Medical Treatments",
+                "group": 2
+        }, {
+            "id": "Treat HMO Member",
+                "group": 3
+        }, {
+            "id": "Treat Mgd Indemnity Patient",
+                "group": 3
+        }, {
+            "id": "Treat Full Indemnity Patient",
+                "group": 3
+        }, {
+            "id": "Bill InsurCo",
+                "group": 3
+        }, {
+            "id": "Treat Sickness",
+                "group": 3
+        }, {
+            "id": "Diagnose Sickness",
+                "group": 3
+        }, {
+            "id": "Run Medical Practice",
+                "group": 3
+        }, {
+            "id": "Lab",
+                "group": 4
+        }, {
+            "id": "Claims Manager",
+                "group": 4
+        }, {
+            "id": "Treatment Be Assessed",
+                "group": 1
+        }, {
+            "id": "Medically Assessed",
+                "group": 1
+        }, {
+            "id": "Fast Turnaround",
+                "group": 2
+        }, {
+            "id": "Approve Treatment",
+                "group": 3
+        }, {
+            "id": "Sign Approval Document",
+                "group": 3
+        }, {
+            "id": "Let Claims Clerk Assess Treatment",
+                "group": 3
+        }, {
+            "id": "Verify Patient Policy",
+                "group": 3
+        }, {
+            "id": "Let Med Assessor Make Medical Assessment",
+                "group": 3
+        }, {
+            "id": "Make Medical Assessment",
+                "group": 3
+        }, {
+            "id": "Review Patient Med History",
+                "group": 3
+        }, {
+            "id": "Insurance Company",
+                "group": 4
+        }, {
+            "id": "Run Health Insurance Business",
+                "group": 1
+        }, {
+            "id": "Fast",
+                "group": 2
+        }, {
+            "id": "Low Admin Costs",
+                "group": 2
+        }, {
+            "id": "Controlled Medical Costs",
+                "group": 2
+        }, {
+            "id": "Run Full Indemnity Insurance Business",
+                "group": 3
+        }, {
+            "id": "Run Mgd Indemnity Insurance Business",
+                "group": 3
+        }, {
+            "id": "Run HMO Business",
+                "group": 3
+        }, {
+            "id": "Sell Policy",
+                "group": 3
+        }, {
+            "id": "Process Claim",
+                "group": 3
+        }, {
+            "id": "Reimburse Treatment",
+                "group": 3
+        }, {
+            "id": "Select Patient",
+                "group": 3
+        }, {
+            "id": "Medical Assessor",
+                "group": 4
+        }, {
+            "id": "Health Maint Org",
+                "group": 4
+        }, {
+            "id": "Investor",
+                "group": 4
+        }, {
+            "id": "Claims Clerk",
+                "group": 4
+        }, {
+            "id": "Policy Records Dept",
+                "group": 4
+        }, {
+            "id": "Claims Cases Repository",
+                "group": 4
+        }, {
+            "id": "Medical Records Dept",
+                "group": 4
+        }, {
+            "id": "Capital",
+                "group": 5
+        }, {
+            "id": "Premium P",
+                "group": 5
+        }, {
+            "id": "Membership",
+                "group": 5
+        }, {
+            "id": "Patient Info",
+                "group": 5
+        }, {
+            "id": "Approval T",
+                "group": 5
+        }, {
+            "id": "Reimburse",
+                "group": 5
+        }, {
+            "id": "Approval O",
+                "group": 5
+        }, {
+            "id": "PreApproval",
+                "group": 5
+        }, {
+            "id": "Fee [Treatment]",
+                "group": 5
+        }, {
+            "id": "Lab Fee",
+                "group": 5
+        }, {
+            "id": "Fee Per Plan",
+                "group": 5
+        }, {
+            "id": "Patient Policy",
+                "group": 5
+        }, {
+            "id": "Policy Manager",
+                "group": 5
+        }, {
+            "id": "Med Claim",
+                "group": 5
+        }, {
+            "id": "Patient Med",
+                "group": 5
+        }],
+            "links": [{
+            "source": "Be Well",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Peace of Mind",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Quickly Treated",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Affordable",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Be Well By Joining HMO Plan",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Get Well By Having Mgd Indemnity Insurance",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Get Treated",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Join HMO Plan",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Get Treated",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Buy Insurance",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Get Well By Having Full Indemnity Insurance",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Get Treated",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Buy Insurance",
+                "target": "Patient",
+                "value": 0
+        },{
+            "source": "Patient Be Cured",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Viable Practice",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Adequate Clientele",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Economically Viable Practice",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Low Cost Medical Treatments",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Effective Medical Treatments",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Treat HMO Member",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Treat Mgd Indemnity Patient",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Treat Full Indemnity Patient",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Bill InsurCo",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Treat Sickness",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Diagnose Sickness",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Run Medical Practice",
+                "target": "Physician",
+                "value": 0
+        },{
+            "source": "Treatment Be Assessed",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Medically Assessed",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Fast Turnaround",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Approve Treatment",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Sign Approval Document",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Assess Treatment",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Let Claims Clerk Assess Treatment",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Verify Patient Policy",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Let Med Assessor Make Medical Assessment",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Make Medical Assessment",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Review Patient Med History",
+                "target": "Claims Manager",
+                "value": 0
+        },{
+            "source": "Run Health Insurance Business",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Profitable",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Fast",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Fast",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Low Admin Costs",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Controlled Medical Costs",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Run Full Indemnity Insurance Business",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Run Mgd Indemnity Insurance Business",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Run HMO Business",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Sell Policy",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Process Claim",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Reimburse Treatment",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Select Patient",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Sell Policy",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Process Claim",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Approve Treatment",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Reimburse Treatment",
+                "target": "Insurance Company",
+                "value": 0
+        },{
+            "source": "Profitable",
+                "target": "Health Maint Org",
+                "value": 1
+        },{
+            "source": "Health Maint Org",
+                "target": "Capital",
+                "value": 1
+        },{
+            "source": "Capital",
+                "target": "Investor",
+                "value": 1
+        },{
+            "source": "Investor",
+                "target": "Profitable",
+                "value": 1
+        },{
+            "source": "Get Well By Having Mgd Indemnity Insurance",
+                "target": "Be Well",
+                "value": 2
+        },{
+            "source": "Get Well By Having Mgd Indemnity Insurance",
+                "target": "Affordable",
+                "value": 4
+        },{
+            "source": "Get Well By Having Mgd Indemnity Insurance",
+                "target": "Quickly Treated",
+                "value": 4
+        },{
+            "source": "Get Well By Having Full Indemnity Insurance",
+                "target": "Be Well",
+                "value": 2
+        },{
+            "source": "Get Well By Having Full Indemnity Insurance",
+                "target": "Affordable",
+                "value": 4
+        },{
+            "source": "Get Well By Having Full Indemnity Insurance",
+                "target": "Quickly Treated",
+                "value": 4
+        },{
+            "source": "Be Well By Joining HMO Plan",
+                "target": "Be Well",
+                "value": 2
+        },{
+            "source": "Be Well By Joining HMO Plan",
+                "target": "Affordable",
+                "value": 4
+        },{
+            "source": "Be Well By Joining HMO Plan",
+                "target": "Quickly Treated",
+                "value": 4
+        },{
+            "source": "Get Treated",
+                "target": "Get Well By Having Mgd Indemnity Insurance",
+                "value": 3
+        },{
+            "source": "Get Treated",
+                "target": "Get Well By Having Full Indemnity Insurance",
+                "value": 3
+        },{
+            "source": "Get Treated",
+                "target": "Be Well By Joining HMO Plan",
+                "value": 3
+        },{
+            "source": "Get Treated",
+                "target": "Treated [Sickness]",
+                "value": 1
+        },{
+            "source": "Buy Insurance",
+                "target": "Get Well By Having Mgd Indemnity Insurance",
+                "value": 3
+        },{
+            "source": "Buy Insurance",
+                "target": "Get Well By Having Mgd Indemnity Insurance",
+                "value": 1
+        },{
+            "source": "Buy Insurance",
+                "target": "Covered [Sickness]",
+                "value": 3
+        },{
+            "source": "Join HMO Plan",
+                "target": "Be Well By Joining HMO Plan",
+                "value": 3
+        },{
+            "source": "Join HMO Plan",
+                "target": "Covered [Sickness]",
+                "value": 1
+        },{
+            "source": "Affordable",
+                "target": "Peace of Mind",
+                "value": 4
+        },{
+            "source": "Quickly Treated",
+                "target": "Peace of Mind",
+                "value": 4
+        },{
+            "source": "Patient",
+                "target": "Quickly [Treated (Sickness)]",
+                "value": 1
+        },{
+            "source": "Patient",
+                "target": "Continuing Business [Patient]",
+                "value": 1
+        },{
+            "source": "Patient",
+                "target": "Affordable [Premium]",
+                "value": 1
+        },{
+            "source": "Treated [Sickness]",
+                "target": "Treat Full Indemnity Patient",
+                "value": 1
+        },{
+            "source": "Follow Prescribed Health Program [Program]",
+                "target": "Get Treated",
+                "value": 1
+        },{
+            "source": "Take Medicine [Med]",
+                "target": "Get Treated",
+                "value": 1
+        },{
+            "source": "Quickly [Treated (Sickness)]",
+                "target": "Physician",
+                "value": 1
+        },{
+            "source": "Treated [Sickness]",
+                "target": "Treat Mgd Indemnity Patient",
+                "value": 1
+        },{
+            "source": "Treated [Sickness]",
+                "target": "Treat HMO Member",
+                "value": 1
+        },{
+            "source": "Patient Be Cured",
+                "target": "Run Medical Practice",
+                "value": 3
+        },{
+            "source": "Viable Practice",
+                "target": "Run Medical Practice",
+                "value": 3
+        },{
+            "source": "Treat Mgd Indemnity Patient",
+                "target": "Patient Be Cured",
+                "value": 2
+        },{
+            "source": "Treat Mgd Indemnity Patient",
+                "target": "Adequate Clientele",
+                "value": 4
+        },{
+            "source": "Treat Mgd Indemnity Patient",
+                "target": "Low Cost Medical Treatments",
+                "value": 4
+        },{
+            "source": "Treat Mgd Indemnity Patient",
+                "target": "Take Medicine [Med]",
+                "value": 1
+        },{
+            "source": "Treat HMO Member",
+                "target": "Adequate Clientele",
+                "value": 4
+        },{
+            "source": "Treat HMO Member",
+                "target": "Low Cost Medical Treatments",
+                "value": 4
+        },{
+            "source": "Treat HMO Member",
+                "target": "Continuing Approval",
+                "value": 1
+        },{
+            "source": "Treat HMO Member",
+                "target": "Fee Per Plan",
+                "value": 1
+        },{
+            "source": "Treat HMO Member",
+                "target": "Follow Prescribed Health Program [Program]",
+                "value": 1
+        },{
+            "source": "Treat HMO Member",
+                "target": "Take Medicine [Med]",
+                "value": 1
+        },{
+            "source": "Treat Full Indemnity Patient",
+                "target": "Adequate Clientele",
+                "value": 4
+        },{
+            "source": "Treat Full Indemnity Patient",
+                "target": "Low Cost Medical Treatments",
+                "value": 4
+        },{
+            "source": "Treat Full Indemnity Patient",
+                "target": "Take Medicine [Med]",
+                "value": 1
+        },{
+            "source": "Treat Full Indemnity Patient",
+                "target": "Reimburse",
+                "value": 1
+        },{
+            "source": "Bill InsurCo",
+                "target": "Treat Mgd Indemnity Patient",
+                "value": 3
+        },{
+            "source": "Bill InsurCo",
+                "target": "Reimburse",
+                "value": 1
+        },{
+            "source": "Treat Sickness",
+                "target": "Treat Mgd Indemnity Patient",
+                "value": 3
+        },{
+            "source": "Treat Sickness",
+                "target": "Approval T",
+                "value": 1
+        },{
+            "source": "Diagnose Sickness",
+                "target": "Treat Mgd Indemnity Patient",
+                "value": 3
+        },{
+            "source": "Effective Medical Treatments",
+                "target": "Viable Practice",
+                "value": 4
+        },{
+            "source": "Economically Viable Practice",
+                "target": "Viable Practice",
+                "value": 4
+        },{
+            "source": "Low Cost Medical Treatments",
+                "target": "Economically Viable Practice",
+                "value": 4
+        },{
+            "source": "Low Cost Medical Treatments",
+                "target": "Effective Medical Treatments",
+                "value": 4
+        },{
+            "source": "Physician",
+                "target": "Test [Sample]",
+                "value": 1
+        },{
+            "source": "Test [Sample]",
+                "target": "Lab",
+                "value": 1
+        },{
+            "source": "Lab",
+                "target": "Lab Fee",
+                "value": 1
+        },{
+            "source": "Lab Fee",
+                "target": "Physician",
+                "value": 1
+        },{
+            "source": "Lab Fee",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Continuing Approval",
+                "target": "Run HMO Business",
+                "value": 1
+        },{
+            "source": "Fee Per Plan",
+                "target": "Run HMO Business",
+                "value": 1
+        },{
+            "source": "Approval T",
+                "target": "Approve Treatment",
+                "value": 1
+        },{
+            "source": "Reimburse",
+                "target": "Reimburse Treatment",
+                "value": 1
+        },{
+            "source": "Reimburse",
+                "target": "Reimburse Treatment",
+                "value": 1
+        },{
+            "source": "Physician",
+                "target": "Approval O",
+                "value": 1
+        },{
+            "source": "Approval O",
+                "target": "Approve Treatment",
+                "value": 1
+        },{
+            "source": "Physician",
+                "target": "Fast [Processing (Claim)]",
+                "value": 1
+        },{
+            "source": "Fast [Processing (Claim)]",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Physician",
+                "target": "Fast [Claims Approval]",
+                "value": 1
+        },{
+            "source": "Fast [Claims Approval]",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Physician",
+                "target": "PreApproval",
+                "value": 1
+        },{
+            "source": "PreApproval",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Physician",
+                "target": "Fee [Treatment]",
+                "value": 1
+        },{
+            "source": "Fee [Treatment]",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Verify Patient Policy",
+                "target": "Patient Policy",
+                "value": 1
+        },{
+            "source": "Patient Policy",
+                "target": "Policy Records Dept",
+                "value": 1
+        },{
+            "source": "Let Med Assessor Make Medical Assessment",
+                "target": "Medical Assessor",
+                "value": 1
+        },{
+            "source": "Review Patient Med History",
+                "target": "Patient Med",
+                "value": 1
+        },{
+            "source": "Patient Med",
+                "target": "Medical Records Dept",
+                "value": 1
+        },{
+            "source": "Make Medical Assessment",
+                "target": "Med Claim",
+                "value": 1
+        },{
+            "source": "Med Claim",
+                "target": "Claims Cases Repository",
+                "value": 1
+        },{
+            "source": "Sign Approval Document",
+                "target": "Assess Treatment",
+                "value": 1
+        },{
+            "source": "Assess Treatment",
+                "target": "Claims Clerk",
+                "value": 1
+        },{
+            "source": "Claims Manager",
+                "target": "Assessed [Treatment Plan]",
+                "value": 1
+        },{
+            "source": "Assessed [Treatment Plan]",
+                "target": "Medical Assessor",
+                "value": 1
+        },{
+            "source": "Medical Assessor",
+                "target": "Continued Employment",
+                "value": 1
+        },{
+            "source": "Insurance Company",
+                "target": "Medical Assessor",
+                "value": 1
+        },{
+            "source": "Medical Assessor",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Insurance Company",
+                "target": "Fast [Claims Approval]",
+                "value": 1
+        },{
+            "source": "Fast [Claims Approval]",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Insurance Company",
+                "target": "Process Claim [Claim]",
+                "value": 1
+        },{
+            "source": "Process Claim [Claim]",
+                "target": "Claims Manager",
+                "value": 1
+        },{
+            "source": "Claims Manager",
+                "target": "Patient Info",
+                "value": 1
+        },{
+            "source": "Patient Info",
+                "target": "Insurance Company",
+                "value": 1
+        },{
+            "source": "Patient",
+                "target": "Fast [Claims Approval]",
+                "value": 1
+        },{
+            "source": "Patient",
+                "target": "Affordable [Premium]",
+                "value": 1
+        },{
+            "source": "Affordable [Premium]",
+                "target": "Insurance Company",
+                "value": 1
+        },{
+            "source": "Continuing Business [Patient]",
+                "target": "Insurance Company",
+                "value": 1
+        },{
+            "source": "Covered [Sickness]",
+                "target": "Select Patient",
+                "value": 1
+        },{
+            "source": "Covered [Sickness]",
+                "target": "Run HMO Business",
+                "value": 1
+        },{
+            "source": "Covered [Sickness]",
+                "target": "Sell Policy",
+                "value": 1
+        },{
+            "source": "Sell Policy",
+                "target": "Premium P",
+                "value": 1
+        },{
+            "source": "Premium P",
+                "target": "Buy Insurance",
+                "value": 1
+        },{
+            "source": "Run HMO Business",
+                "target": "Membership",
+                "value": 1
+        },{
+            "source": "Membership",
+                "target": "Join HMO Plan",
+                "value": 1
+        },{
+            "source": "Run Mgd Indemnity Insurance Business",
+                "target": "Run Health Insurance Business",
+                "value": 2
+        },{
+            "source": "Run HMO Business",
+                "target": "Run Health Insurance Business",
+                "value": 2
+        },{
+            "source": "Run HMO Business",
+                "target": "Low Admin Costs",
+                "value": 4
+        },{
+            "source": "Run HMO Business",
+                "target": "Controlled Medical Costs",
+                "value": 4
+        },{
+            "source": "Run Full Indemnity Insurance Business",
+                "target": "Run Health Insurance Business",
+                "value": 2
+        },{
+            "source": "Run Full Indemnity Insurance Business",
+                "target": "Low Admin Costs",
+                "value": 4
+        },{
+            "source": "Run Full Indemnity Insurance Business",
+                "target": "Controlled Medical Costs",
+                "value": 4
+        },{
+            "source": "Sell Policy",
+                "target": "Run Mgd Indemnity Insurance Business",
+                "value": 3
+        },{
+            "source": "Process Claim",
+                "target": "Run Mgd Indemnity Insurance Business",
+                "value": 3
+        },{
+            "source": "Sell Policy",
+                "target": "Run Full Indemnity Insurance Business",
+                "value": 3
+        },{
+            "source": "Process Claim",
+                "target": "Run Full Indemnity Insurance Business",
+                "value": 3
+        },{
+            "source": "Approve Treatment",
+                "target": "Sell Policy",
+                "value": 3
+        },{
+            "source": "Select Patient",
+                "target": "Sell Policy",
+                "value": 3
+        },{
+            "source": "Reimburse Treatment",
+                "target": "Sell Policy",
+                "value": 3
+        },{
+            "source": "Reimburse Treatment",
+                "target": "Process Claim",
+                "value": 3
+        },{
+            "source": "Fast",
+                "target": "Sell Policy",
+                "value": 3
+        },{
+            "source": "Fast",
+                "target": "Process Claim",
+                "value": 3
+        },{
+            "source": "Fast",
+                "target": "Low Admin Costs",
+                "value": 4
+        },{
+            "source": "Low Admin Costs",
+                "target": "Profitable",
+                "value": 4
+        },{
+            "source": "Controlled Medical Costs",
+                "target": "Profitable",
+                "value": 4
+        },{
+            "source": "Treatment Be Assessed",
+                "target": "Approve Treatment",
+                "value": 3
+        },{
+            "source": "Sign Approval Document",
+                "target": "Approve Treatment",
+                "value": 3
+        },{
+            "source": "Assess Treatment",
+                "target": "Treatment Be Assessed",
+                "value": 2
+        },{
+            "source": "Let Claims Clerk Assess Treatment",
+                "target": "Treatment Be Assessed",
+                "value": 2
+        },{
+            "source": "Verify Patient Policy",
+                "target": "Assess Treatment",
+                "value": 3
+        },{
+            "source": "Medically Assessed",
+                "target": "Assess Treatment",
+                "value": 3
+        },{
+            "source": "Fast Turnaround",
+                "target": "Assess Treatment",
+                "value": 3
+        },{
+            "source": "Policy Manager",
+                "target": "Verify Patient Policy",
+                "value": 3
+        },{
+            "source": "Let Med Assessor Make Medical Assessment",
+                "target": "Medically Assessed",
+                "value": 2
+        },{
+            "source": "Make Medical Assessment",
+                "target": "Medically Assessed",
+                "value": 2
+        },{
+            "source": "Make Medical Assessment",
+                "target": "Fast Turnaround",
+                "value": 4
+        },{
+            "source": "Let Med Assessor Make Medical Assessment",
+                "target": "Fast Turnaround",
+                "value": 4
+        },{
+            "source": "Review Patient Med History",
+                "target": "Make Medical Assessment",
+                "value": 3
+        }]
+    }

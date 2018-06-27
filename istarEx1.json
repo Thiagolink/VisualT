@@ -1,0 +1,154 @@
+
+		{
+        "nodes": [{
+            "id": "Cliente",
+                "group": 1
+        }, {
+            "id": "Media System",
+                "group": 1
+        }, {
+            "id": "Fornecedor de mídia",
+                "group": 1
+        }, {
+            "id": "Loja de mídia",
+                "group": 1
+        }, {
+            "id": "Itens de mídia comprados",
+                "group": 3
+        }, {
+            "id": "Pedidos pela internet atendidos",
+                "group": 3
+        }, {
+            "id": "Loja esteja funcionando",
+                "group": 3
+        }, {
+            "id": "Pedidos de compra atendidos",
+                "group": 3
+        }, {
+            "id": "Itens de mídia",
+                "group": 5
+        }, {
+            "id": "Suprimento contínuo",
+                "group": 7
+        }, {
+            "id": "Melhorar vendas",
+                "group": 7
+        }, {
+            "id": "Melhorar serviço",
+                "group": 7
+        }, {
+            "id": "Atender pedidos pela internet",
+                "group": 9
+        }, {
+            "id": "Gerenciar inventário de itens",
+                "group": 9
+        }, {
+            "id": "Atender pedidos por telefone",
+                "group": 9
+        }, {
+            "id": "Atender pedidos pessoalmente",
+                "group": 9
+        }, {
+            "id": "Vender estoque",
+                "group": 9
+        }, {
+            "id": "Atualizar catálogo",
+                "group": 9
+        }, {
+            "id": "Operar loja",
+                "group": 9
+        }],
+            "links": [{
+            "source": "Cliente",
+                "target": "Itens de mídia comprados",
+                "value": 10
+        },{
+            "source": "Pedidos pela internet atendidos",
+                "target": "Media System",
+                "value": 10
+        },{
+            "source": "Itens de mídia comprados",
+                "target": "Pedidos de compra atendidos",
+                "value": 10
+        },{
+            "source": "Atender pedidos pela internet",
+                "target": "Pedidos pela internet atendidos",
+                "value": 10
+        },{
+            "source": "Atender pedidos pela internet",
+                "target": "Melhorar vendas",
+                "value": 1
+        },{
+            "source": "Atender pedidos pela internet",
+                "target": "Melhorar serviço",
+                "value": 1
+        },{
+            "source": "Atender pedidos pela internet",
+                "target": "Pedidos de compra atendidos",
+                "value": 1
+        },{
+            "source": "Atender pedidos por telefone",
+                "target": "Melhorar vendas",
+                "value": 1
+        },{
+            "source": "Atender pedidos por telefone",
+                "target": "Melhorar serviço",
+                "value": 1
+        },{
+            "source": "Atender pedidos por telefone",
+                "target": "Pedidos de compra atendidos",
+                "value": 1
+        },{
+            "source": "Atender pedidos pessoalmente",
+                "target": "Pedidos de compra atendidos",
+                "value": 1
+        },{
+            "source": "Operar loja",
+                "target": "Loja esteja funcionando",
+                "value": 1
+        },{
+            "source": "Vender estoque",
+                "target": "Itens de mídia",
+                "value": 10
+        },{
+            "source": "Itens de mídia",
+                "target": "Fornecedor de mídia",
+                "value": 10
+        },{
+            "source": "Atualizar catálogo",
+                "target": "Suprimento contínuo",
+                "value": 10
+        },{
+            "source": "Suprimento contínuo",
+                "target": "Fornecedor de mídia",
+                "value": 10
+        },{
+            "source": "Operar loja",
+                "target": "Melhorar vendas",
+                "value": 2
+        },{
+            "source": "Operar loja",
+                "target": "Melhorar serviço",
+                "value": 2
+        },{
+            "source": "Operar loja",
+                "target": "Pedidos de compra atendidos",
+                "value": 2
+        },{
+            "source": "Operar loja",
+                "target": "Gerenciar inventário de itens",
+                "value": 2
+        },{
+            "source": "Gerenciar inventário de itens",
+                "target": "Vender estoque",
+                "value": 2
+        },{
+            "source": "Gerenciar inventário de itens",
+                "target": "Atualizar catálogo",
+                "value": 2
+        },{
+            "source": "Loja de mídia",
+                "target": "Loja esteja funcionando",
+                "value": 2
+        } ]
+    }

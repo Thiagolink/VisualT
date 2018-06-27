@@ -1,0 +1,380 @@
+{
+        "nodes": [{
+            "id": "RF01",
+                "group": 1
+        }, {
+            "id": "RF02",
+                "group": 1
+        }, {
+            "id": "RF03",
+                "group": 1
+        }, {
+            "id": "RF04",
+                "group": 1
+        }, {
+            "id": "RF05",
+                "group": 1
+        }, {
+            "id": "RF06",
+                "group": 1
+        }, {
+            "id": "RF07",
+                "group": 1
+        }, {
+            "id": "RF08",
+                "group": 1
+        }, {
+            "id": "RF09",
+                "group": 1
+        }, {
+            "id": "RF10",
+                "group": 1
+        }, {
+            "id": "RF11",
+                "group": 1
+        }, {
+            "id": "RF12",
+                "group": 1
+        }, {
+            "id": "RF13",
+                "group": 1
+        }, {
+            "id": "RF14",
+                "group": 1
+        }, {
+            "id": "RF15",
+                "group": 1
+        }, {
+            "id": "RF16",
+                "group": 1
+        }, {
+            "id": "RF17",
+                "group": 1
+        }, {
+            "id": "RF18",
+                "group": 1
+        }, {
+            "id": "RF19",
+                "group": 1
+        }, {
+            "id": "RF20",
+                "group": 1
+        }, {
+            "id": "RF21",
+                "group": 1
+        }, {
+            "id": "RF22",
+                "group": 1
+        }, {
+            "id": "RF23",
+                "group": 1
+        }, {
+            "id": "RF24",
+                "group": 1
+        }, {
+            "id": "RF25",
+                "group": 1
+        }, {
+            "id": "RF26",
+                "group": 1
+        }, {
+            "id": "RF27",
+                "group": 1
+        }, {
+            "id": "RF28",
+                "group": 1
+        }, {
+            "id": "RF29",
+                "group": 1
+        }, {
+            "id": "RF30",
+                "group": 1
+        }, {
+            "id": "RF31",
+                "group": 1
+        }, {
+            "id": "RF32",
+                "group": 1
+        }, {
+            "id": "RF33",
+                "group": 1
+        }, {
+            "id": "RF34",
+                "group": 1
+        }, {
+            "id": "RF35",
+                "group": 1
+        }, {
+            "id": "RF36",
+                "group": 1
+        }, {
+            "id": "RF37",
+                "group": 1
+        }, {
+            "id": "RF38",
+                "group": 1
+        }, {
+            "id": "RF39",
+                "group": 1
+        }, {
+            "id": "RF40",
+                "group": 1
+        }, {
+            "id": "RF41",
+                "group": 1
+        }, {
+            "id": "Segunda Entrevista",
+                "group": 2
+        }, {
+            "id": "Proposta de Projeto",
+                "group": 2
+        }, {
+            "id": "Brainstorm",
+                "group": 2
+        }, {
+            "id": "Tela Veterinario",
+                "group": 3
+        }, {
+            "id": "Tela Tratador",
+                "group": 3
+        }, {
+            "id": "Tela Zootecnista",
+                "group": 3
+        }, {
+            "id": "Tela Administrador",
+                "group": 3
+        }],
+            "links": [{
+            "source": "RF01",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF02",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF03",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF04",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF05",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF06",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF07",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF08",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF09",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF10",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF11",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF12",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF13",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF14",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF15",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF16",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF17",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF18",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF19",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF20",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF21",
+                "target": "Proposta de Projeto",
+                "value": 0
+        }, {
+            "source": "RF22",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF23",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF24",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF25",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF26",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF27",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF28",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF29",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF30",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF31",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF32",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF33",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF34",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF35",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF36",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF37",
+                "target": "Brainstorm",
+                "value": 0
+        }, {
+            "source": "RF38",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF39",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF40",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF41",
+                "target": "Segunda Entrevista",
+                "value": 0
+        }, {
+            "source": "RF22",
+                "target": "Tela Tratador",
+                "value": 1
+        }, {
+            "source": "RF23",
+                "target": "Tela Tratador",
+                "value": 1
+        }, {
+            "source": "RF24",
+                "target": "Tela Tratador",
+                "value": 1
+        }, {
+            "source": "RF25",
+                "target": "Tela Tratador",
+                "value": 1
+        }, {
+            "source": "RF27",
+                "target": "Tela Tratador",
+                "value": 1
+        }, {
+            "source": "RF29",
+                "target": "Tela Tratador",
+                "value": 1
+        }, {
+            "source": "RF30",
+                "target": "Tela Tratador",
+                "value": 1
+        }, {
+            "source": "RF15",
+                "target": "Tela Veterinario",
+                "value": 1
+        }, {
+            "source": "RF16",
+                "target": "Tela Veterinario",
+                "value": 1
+        }, {
+            "source": "RF17",
+                "target": "Tela Zootecnista",
+                "value": 1
+        }, {
+            "source": "RF18",
+                "target": "Tela Zootecnista",
+                "value": 1
+        }, {
+            "source": "RF19",
+                "target": "Tela Administrador",
+                "value": 1
+        }, {
+            "source": "RF20",
+                "target": "Tela Administrador",
+                "value": 1
+        }, {
+            "source": "RF21",
+                "target": "Tela Administrador",
+                "value": 1
+        }, {
+            "source": "Tela Veterinario",
+                "target": "Tela Administrador",
+                "value": 2
+        }, {
+            "source": "Tela Zootecnista",
+                "target": "Tela Administrador",
+                "value": 2
+        }, {
+            "source": "Tela Tratador",
+                "target": "Tela Administrador",
+                "value": 2
+        }]
+    }

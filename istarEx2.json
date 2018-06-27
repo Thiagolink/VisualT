@@ -1,0 +1,111 @@
+	{
+        "nodes": [{
+            "id": "Manter-se atualizado",
+                "group": 1
+        }, {
+            "id": "Processo de matrícula automático",
+                "group": 1
+        }, {
+            "id": "Aluno",
+                "group": 2
+        }, {
+            "id": "Sistema de matrícula",
+                "group": 2
+        }, {
+            "id": "Estudar por conta própria",
+                "group": 3
+        }, {
+            "id": "Matricular em um curso",
+                "group": 3
+        }, {
+            "id": "Fazer inscrição",
+                "group": 3
+        }, {
+            "id": "Pagar matrícula",
+                "group": 3
+        }, {
+            "id": "Comparecer as aulas",
+                "group": 3
+        }, {
+            "id": "Fazer exercícios",
+                "group": 3
+        }, {
+            "id": "Realizar matrícula",
+                "group": 3
+        }, {
+            "id": "Gerenciar processo de matrícula",
+                "group": 3
+        }, {
+            "id": "Cadastrar cursos disponíveis",
+                "group": 3
+        }, {
+            "id": "Coletar dados dos alunos",
+                "group": 3
+        }, {
+            "id": "Receber pagamento",
+                "group": 3
+        }, {
+            "id": "Pagamento [matrícula]",
+                "group": 4
+        }, {
+            "id": "Participação na aula",
+                "group": 5
+        }],
+            "links": [{
+            "source": "Estudar por conta própria",
+                "target": "Manter-se atualizado",
+                "value": 10
+        },{
+            "source": "Matricular em um curso",
+                "target": "Manter-se atualizado",
+                "value": 10
+        },{
+            "source": "Gerenciar processo de matrícula",
+                "target": "Processo de matrícula automático",
+                "value": 10
+        }, {
+            "source": "Realizar matrícula",
+                "target": "Gerenciar processo de matrícula",
+                "value": 1
+        }, {
+            "source": "Fazer inscrição",
+                "target": "Realizar matrícula",
+                "value": 1
+        }, {
+            "source": "Receber pagamento",
+                "target": "Pagamento [matrícula]",
+                "value": 1
+        }, {
+            "source": "Pagamento [matrícula]",
+                "target": "Pagar matrícula",
+                "value": 1
+        }, {
+            "source": "Fazer inscrição",
+                "target": "Matricular em um curso",
+                "value": 2
+        }, {
+            "source": "Pagar matrícula",
+                "target": "Matricular em um curso",
+                "value": 2
+        }, {
+            "source": "Comparecer as aulas",
+                "target": "Matricular em um curso",
+                "value": 2
+        }, {
+            "source": "Fazer exercícios",
+                "target": "Matricular em um curso",
+                "value": 2
+        }, {
+            "source": "Cadastrar cursos disponíveis",
+                "target": "Gerenciar processo de matrícula",
+                "value": 2
+        }, {
+            "source": "Coletar dados dos alunos",
+                "target": "Gerenciar processo de matrícula",
+                "value": 2
+        }, {
+            "source": "Receber pagamento",
+                "target": "Gerenciar processo de matrícula",
+                "value": 2
+        }  ]
+    }
